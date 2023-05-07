@@ -19,3 +19,15 @@ basic c plus plus teaching materials
    ```
    pkg install clang
    ```
+3. Install Text Editor Nano Package
+   ```
+   pkg install nano
+   ```
+4. Testing Compiler <br>
+   create a new file with name test.cpp <br>
+   copy this batch command into termux command line
+   ```
+   nano test.cpp
+   ```
+   
+   Enter this code and Save ctrl+x and Enter
