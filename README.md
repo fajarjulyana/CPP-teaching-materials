@@ -25,7 +25,7 @@ basic c plus plus teaching materials
    ```
 ## Testing Compiler on Linux and Termux
 
- 1. create a new file with name main.cpp <br>
+ 1. create a new file with name "main.cpp" <br>
    copy this batch command into termux command line
    ```
    nano main.cpp
@@ -33,3 +33,13 @@ basic c plus plus teaching materials
    
   2. Enter this code and Save ctrl+x and Enter
    https://github.com/fajarjulyana/CPP-teaching-materials/blob/2ccae7dbf0bc7dc4c239f287f9a3a70681f74c4c/basic/introduction/main.cpp#L1-L8
+  3. Compile and Run
+     ```
+     clang++ main.cpp
+     ```
+     out default as "a.out"
+     Run with command
+     ```
+     ./a.out
+     ```
+
