@@ -32,7 +32,7 @@ basic c plus plus teaching materials
    ```
    
   2. Enter this code and Save ctrl+x and Enter
-   https://github.com/fajarjulyana/CPP-teaching-materials/blob/2ccae7dbf0bc7dc4c239f287f9a3a70681f74c4c/basic/introduction/main.cpp#L1-L8
+   https://github.com/fajarjulyana/CPP-teaching-materials/blob/b030feb3fcea522b9bd626a7d92921cd0bbbe88c/basic/introduction/main.cpp#L1-L8
   3. Compile and Run
      ```
      clang++ main.cpp
