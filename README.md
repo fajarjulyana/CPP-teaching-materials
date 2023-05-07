@@ -42,5 +42,5 @@ basic c plus plus teaching materials
      ```
      ./a.out
      ```
-   output <br>
-   <img src="basic/introduction/capture/capture.jpg" style="width:300pxheight:100px;">
+   4. output
+   <img src="basic/introduction/capture/capture.jpg" style="width:200px; height:50px;">
