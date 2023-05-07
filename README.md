@@ -1,4 +1,4 @@
-# cpp-beginner
+# CPP Beginner
 basic c plus plus teaching materials
 # General CPP Compiler preparation and installation
 ## Windows
