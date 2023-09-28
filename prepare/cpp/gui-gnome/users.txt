@@ -1,0 +1,5 @@
+john:password123
+jane:qwerty
+admin:admin123
+:
+fajar:fajar

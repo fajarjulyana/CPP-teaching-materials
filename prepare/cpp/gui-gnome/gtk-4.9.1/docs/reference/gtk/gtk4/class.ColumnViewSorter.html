@@ -1,0 +1,505 @@
+<!--
+SPDX-FileCopyrightText: GTK Development Team
+
+SPDX-License-Identifier: LGPL-2.1-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gtk.ColumnViewSorter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="gtk-logo.svg"/>
+  <meta property="og:image:alt" content="Gtk-4.0"/>
+  
+
+  
+  <meta property="og:title" content="Gtk.ColumnViewSorter"/>
+  <meta property="og:description" content="Reference for Gtk.ColumnViewSorter"/>
+  <meta name="twitter:title" content="Gtk.ColumnViewSorter"/>
+  <meta name="twitter:description" content="Reference for Gtk.ColumnViewSorter"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Gtk" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="gtk-logo.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Gtk</a></h3>
+        <p>API Version: 4.0</p>
+        
+        <p>Library Version: 4.9.1</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.ColumnViewSorter.html#description">ColumnViewSorter</a>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.ColumnViewSorter.get_n_sort_columns.html">get_n_sort_columns</a>
+  
+    <a class="method" href="method.ColumnViewSorter.get_nth_sort_column.html">get_nth_sort_column</a>
+  
+    <a class="method" href="method.ColumnViewSorter.get_primary_sort_column.html">get_primary_sort_column</a>
+  
+    <a class="method" href="method.ColumnViewSorter.get_primary_sort_order.html">get_primary_sort_order</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.ColumnViewSorter.primary-sort-column.html">primary-sort-column</a>
+  
+    <a class="property" href="property.ColumnViewSorter.primary-sort-order.html">primary-sort-order</a>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Gtk</a><span class="sep" role="presentation"></span>ColumnViewSorter</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/gtk/-/blob/main/gtk/gtkcolumnviewsorter.c#L48">[src]</a>
+          
+        </h4>
+
+        <pre><code>final class Gtk.ColumnViewSorter : Gtk.Sorter {
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          <p><code>GtkColumnViewSorter</code> is a sorter implementation that
+is geared towards the needs of <code>GtkColumnView</code>.</p>
+<p>The sorter returned by <a href="method.ColumnView.get_sorter.html"><code>gtk_column_view_get_sorter()</code></a> is
+a <code>GtkColumnViewSorter</code>.</p>
+<p>In column views, sorting can be configured by associating
+sorters with columns, and users can invert sort order by clicking
+on column headers. The <span class="caps">API</span> of <code>GtkColumnViewSorter</code> is designed
+to allow saving and restoring this&nbsp;configuration.</p>
+<p>If you are only interested in the primary sort column (i.e. the
+column where a sort indicator is shown in the header), then
+you can just look at <a href="property.ColumnViewSorter.primary-sort-column.html"><code>GtkColumnViewSorter:primary-sort-column</code></a>
+and <a href="property.ColumnViewSorter.primary-sort-order.html"><code>GtkColumnViewSorter:primary-sort-order</code></a>.</p>
+<p>If you want to store the full sort configuration, including
+secondary sort columns that are used for tie breaking, then
+you can use <a href="method.ColumnViewSorter.get_nth_sort_column.html"><code>gtk_column_view_sorter_get_nth_sort_column()</code></a>.
+To get notified about changes, use <a href="signal.Sorter.changed.html"><code>GtkSorter::changed</code></a>.</p>
+<p>To restore a saved sort configuration on a <code>GtkColumnView</code>,
+use code&nbsp;like:</p>
+<div class="codehilite"><pre><span></span><code>sorter = gtk_column_view_get_sorter (view);
+for (i = gtk_column_view_sorter_get_n_sort_columns (sorter) - 1; i &gt;= 0; i--)
+  {
+    column = gtk_column_view_sorter_get_nth_sort_column (sorter, i, &amp;order);
+    gtk_column_view_sort_by_column (view, column, order);
+  }
+</code></pre></div>
+
+<p><code>GtkColumnViewSorter</code> was added in <span class="caps">GTK</span>&nbsp;4.10</p>
+        </div>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a href="class.Sorter.html" title="Sorter">GtkSorter</a></li>
+          
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.ColumnViewSorter.get_n_sort_columns.html">gtk_column_view_sorter_get_n_sort_columns</a></h6>
+          <div class="docblock">
+            <p>Returns the number of columns by which the sorter&nbsp;sorts.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available-next" title="This method will be available in the next stable release">unstable</span>&nbsp;<span class="emblem available">since: 4.10</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.ColumnViewSorter.get_nth_sort_column.html">gtk_column_view_sorter_get_nth_sort_column</a></h6>
+          <div class="docblock">
+            <p>Gets the <code>position</code><span class="quo">&#8216;</span>th sort column and its associated sort&nbsp;order.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available-next" title="This method will be available in the next stable release">unstable</span>&nbsp;<span class="emblem available">since: 4.10</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.ColumnViewSorter.get_primary_sort_column.html">gtk_column_view_sorter_get_primary_sort_column</a></h6>
+          <div class="docblock">
+            <p>Returns the primary sort&nbsp;column.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available-next" title="This method will be available in the next stable release">unstable</span>&nbsp;<span class="emblem available">since: 4.10</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.ColumnViewSorter.get_primary_sort_order.html">gtk_column_view_sorter_get_primary_sort_order</a></h6>
+          <div class="docblock">
+            <p>Returns the primary sort&nbsp;order.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available-next" title="This method will be available in the next stable release">unstable</span>&nbsp;<span class="emblem available">since: 4.10</span></p>
+          </div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.Sorter.html">GtkSorter</a> (3)</h5><div class="docblock">
+          
+            <h6><a href="method.Sorter.changed.html">gtk_sorter_changed</a></h6><div class="docblock">
+              <p>Notifies all users of the sorter that it has&nbsp;changed.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+          
+            <h6><a href="method.Sorter.compare.html">gtk_sorter_compare</a></h6><div class="docblock">
+              <p>Compares two given items according to the sort order implemented
+by the&nbsp;sorter.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+          
+            <h6><a href="method.Sorter.get_order.html">gtk_sorter_get_order</a></h6><div class="docblock">
+              <p>Gets the order that <code>self</code> conforms&nbsp;to.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.ColumnViewSorter.primary-sort-column.html">Gtk.ColumnViewSorter:primary-sort-column</a></h6>
+          <div class="docblock">
+            <p>The primary sort&nbsp;column.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available-next" title="This property will be available in the next stable release">unstable</span>&nbsp;<span class="emblem available">since: 4.10</span></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.ColumnViewSorter.primary-sort-order.html">Gtk.ColumnViewSorter:primary-sort-order</a></h6>
+          <div class="docblock">
+            <p>The primary sort&nbsp;order.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available-next" title="This property will be available in the next stable release">unstable</span>&nbsp;<span class="emblem available">since: 4.10</span></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals">
+          <h5 style="display:block;">Signals inherited from <a href="class.Sorter.html">GtkSorter</a> (1)</h5><div class="docblock">
+          
+            <h6><a href="signal.Sorter.changed.html">GtkSorter::changed</a></h6><div class="docblock">
+              <p>Emitted whenever the sorter&nbsp;changed.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct GtkColumnViewSorterClass {
+  GtkSorterClass parent_class;
+  
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        No description available.
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <dl class="members">
+        
+          <dt><code>parent_class: GtkSorterClass</code></dt>
+          <dd>No description available.</dd>
+        
+        </dd>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>
